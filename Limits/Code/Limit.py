@@ -149,4 +149,7 @@ class LimitOfSequence(GraphScene):
         
         self.setup_axes()
         dots = self.get_dots_from_coords(coords)
-        
+
+        dashedlinecoord = ([0,1-epsilon_value.get_value()],[8,1-epsilon_value.get_value()])
+        dashedlinecoordgraph=self.get_dots_from_coords(dashedlinecoord)
+        dashedline = DashedLine(dashedlinecoordgraph[0],dashedlinecoordgraph[1]).set_fill(PURPLE, opacity=1)
