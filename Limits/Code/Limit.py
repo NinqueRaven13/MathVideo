@@ -48,3 +48,27 @@ class LimitOfSequence(GraphScene):
                 b = 2**(-1*i)
                 previous += b
                 coords.append(( i ,previous))
+        
+        Areas = TexMobject(r"\\1","\\frac{1}{2}","\\frac{1}{4}","\\frac{1}{8}","\\frac{1}{16}",
+                           "\\frac{1}{32}","\\frac{1}{64}")
+        for i in range(len(Squares)):
+            self.play(DrawBorderThenFill(Squares[i]),run_time = 2)
+            valueOfArea = Areas[i].move_to(Squares[i].get_center()+np.array([0,0,0])).set_fill(BLACK, opacity=1)
+            if i == 4 or i == 5:
+                valueOfArea.scale(1-(2/i))
+            elif i == 6:
+                valueOfArea.scale((1/2)-(1/i))
+            self.play(Write(valueOfArea))
+        self.play(FadeOut(Areas),FadeOut(Squares))
+        self.play(Write(formula))
+        self.play(ApplyMethod(formula.move_to, UP))
+        self.play(Write(formula1))
+        self.play(FadeOut(formula))
+        self.play(ApplyMethod(formula1.move_to, UP))
+        self.play(Write(formula2))
+        self.play(FadeOut(formula1))
+        self.play(ApplyMethod(formula2.move_to, UP))
+        self.play(Write(formula3))
+        self.play(FadeOut(formula2))
+        self.play(ApplyMethod(formula3.move_to, UP))
+        self.play(FadeOut(formula3))
