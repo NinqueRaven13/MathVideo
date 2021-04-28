@@ -26,4 +26,9 @@ class LimitOfSequence(GraphScene):
         formula2 = TexMobject(r"s_{2} = {\frac{1}{2}}+{\frac{1}{4}} = 0.75")
         formula3 = TexMobject(r"s_{3} = {\frac{1}{2}}+{\frac{1}{4}}+{\frac{1}{8}} = 0.875")
         limitDefinition = TexMobject(r"\forall",r"\epsilon>0 ",r"\quad  ", r" \exists",r" N",r":",r" \forall",r" k",r" >",r"N",r"\quad  ", r" |",r"{x}_{k}"r"-",r"{a}",r"| ",r"<", r"\epsilon")
+
+        Colors = [ORANGE, BLUE, YELLOW]
         
+        epsilon_value = ValueTracker(1)
+        epsilon_is = TexMobject(r"\epsilon=")
+        epsilon_tex = DecimalNumber(epsilon_value.get_value()).add_updater(lambda v: v.set_value(epsilon_value.get_value()))
