@@ -36,3 +36,15 @@ class LimitOfSequence(GraphScene):
         for i in range(len(limitDefinition)):
             a = i%3
             limitDefinition[i].set_fill(Colors[a])
+
+        a = 2
+        previous = -1
+        coords = []
+        for i in range(8):
+            if i == 0:
+                b = 2**(-1*i)
+                previous += b
+            else:
+                b = 2**(-1*i)
+                previous += b
+                coords.append(( i ,previous))
