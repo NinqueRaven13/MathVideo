@@ -185,4 +185,21 @@ class LimitOfSequence(GraphScene):
             run_time=10
             )
         
-        
+        self.wait(3)
+        for i in dots:
+                    i.remove_updater(lambda m: 
+                                                m.set_fill(YELLOW, opacity=1) if m.get_center()[1] >= dashedline.get_center()[1] else m.set_fill(WHITE, opacity=1)
+                                    )
+
+        dashedline.remove_updater(lambda m:
+			 m.become(
+				  DashedLine(
+				   self.get_dots_from_coords(
+						([0,1-epsilon_value.get_value()],[8,1-epsilon_value.get_value()])
+					 )[0],
+				    self.get_dots_from_coords(
+						([0,1-epsilon_value.get_value()],[8,1-epsilon_value.get_value()])
+					 )[1],
+				  )
+			)
+        )
