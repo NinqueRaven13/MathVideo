@@ -143,3 +143,10 @@ class LimitOfSequence(GraphScene):
         self.play(FadeOut(formula2))
         self.play(ApplyMethod(formula3.move_to, UP))
         self.play(FadeOut(formula3))
+
+        self.play(Write(limitDefinition))
+        self.play(FadeOut(limitDefinition))
+        
+        self.setup_axes()
+        dots = self.get_dots_from_coords(coords)
+        
