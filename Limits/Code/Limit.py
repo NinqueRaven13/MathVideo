@@ -153,3 +153,11 @@ class LimitOfSequence(GraphScene):
         dashedlinecoord = ([0,1-epsilon_value.get_value()],[8,1-epsilon_value.get_value()])
         dashedlinecoordgraph=self.get_dots_from_coords(dashedlinecoord)
         dashedline = DashedLine(dashedlinecoordgraph[0],dashedlinecoordgraph[1]).set_fill(PURPLE, opacity=1)
+
+        self.add(dots)
+        self.wait(2)
+        epsilon_tex.next_to(epsilon_is, RIGHT).scale(0.8)
+        self.play(Write(epsilon_is),Write(epsilon_tex))
+        self.add(dashedline)
+        self.wait(2)
+        
