@@ -173,4 +173,9 @@ class LimitOfSequence(GraphScene):
 				  )
 			)
         )
+
+        for i in dots:
+                    i.add_updater(lambda m: 
+                                                m.set_fill(YELLOW, opacity=1) if m.get_center()[1] >= dashedline.get_center()[1] else m.set_fill(WHITE, opacity=1)
+                                    )
         
