@@ -160,4 +160,17 @@ class LimitOfSequence(GraphScene):
         self.play(Write(epsilon_is),Write(epsilon_tex))
         self.add(dashedline)
         self.wait(2)
+
+        dashedline.add_updater(lambda m:
+			 m.become(
+				  DashedLine(
+				   self.get_dots_from_coords(
+						([0,1-epsilon_value.get_value()],[8,1-epsilon_value.get_value()])
+					 )[0],
+				    self.get_dots_from_coords(
+						([0,1-epsilon_value.get_value()],[8,1-epsilon_value.get_value()])
+					 )[1],
+				  )
+			)
+        )
         
