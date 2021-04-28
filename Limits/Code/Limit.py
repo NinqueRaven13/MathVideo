@@ -179,3 +179,10 @@ class LimitOfSequence(GraphScene):
                                                 m.set_fill(YELLOW, opacity=1) if m.get_center()[1] >= dashedline.get_center()[1] else m.set_fill(WHITE, opacity=1)
                                     )
         
+        self.play(
+            epsilon_value.set_value,0,
+            rate_func=linear,
+            run_time=10
+            )
+        
+        
