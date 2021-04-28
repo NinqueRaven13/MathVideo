@@ -20,3 +20,10 @@ class LimitOfSequence(GraphScene):
         square6 = Polygon(np.array([1.5,1,0]),np.array([1.5,1.5,0]),np.array([ 2, 1.5,0]),np.array([2,1,0]))
         square6.set_fill(ORANGE, opacity=1)
         Squares = VGroup(square,square1,square2,square3,square4,square5,square6)
+
+        formula = TexMobject(r"s_{\infty} =\sum_{n=1}^{\infty}{\frac{1}{2^{n}}} = {\frac{1}{2}}+{\frac{1}{4}}+{\frac{1}{8}}+...+{\frac{1}{2^{n}}}+...")
+        formula1 = TexMobject(r"s_{1} = {\frac{1}{2}} = 0.5")
+        formula2 = TexMobject(r"s_{2} = {\frac{1}{2}}+{\frac{1}{4}} = 0.75")
+        formula3 = TexMobject(r"s_{3} = {\frac{1}{2}}+{\frac{1}{4}}+{\frac{1}{8}} = 0.875")
+        limitDefinition = TexMobject(r"\forall",r"\epsilon>0 ",r"\quad  ", r" \exists",r" N",r":",r" \forall",r" k",r" >",r"N",r"\quad  ", r" |",r"{x}_{k}"r"-",r"{a}",r"| ",r"<", r"\epsilon")
+        
