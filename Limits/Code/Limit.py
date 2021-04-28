@@ -203,3 +203,6 @@ class LimitOfSequence(GraphScene):
 				  )
 			)
         )
+
+        self.play(*[FadeOut(obj) for obj in [dots,dashedline,epsilon_is,epsilon_tex,self.axes,self.y_axis_labels]])
+        self.wait(3)
