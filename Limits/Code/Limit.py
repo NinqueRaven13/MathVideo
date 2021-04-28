@@ -28,7 +28,11 @@ class LimitOfSequence(GraphScene):
         limitDefinition = TexMobject(r"\forall",r"\epsilon>0 ",r"\quad  ", r" \exists",r" N",r":",r" \forall",r" k",r" >",r"N",r"\quad  ", r" |",r"{x}_{k}"r"-",r"{a}",r"| ",r"<", r"\epsilon")
 
         Colors = [ORANGE, BLUE, YELLOW]
-        
+
         epsilon_value = ValueTracker(1)
         epsilon_is = TexMobject(r"\epsilon=")
         epsilon_tex = DecimalNumber(epsilon_value.get_value()).add_updater(lambda v: v.set_value(epsilon_value.get_value()))
+
+        for i in range(len(limitDefinition)):
+            a = i%3
+            limitDefinition[i].set_fill(Colors[a])
